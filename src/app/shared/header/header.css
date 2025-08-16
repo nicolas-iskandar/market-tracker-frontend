@@ -1,11 +1,13 @@
 header {
-  background-color: #180032;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
+  font-weight: bold;
+  font-size: larger;
 }
 
 nav {
@@ -13,4 +15,11 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1em;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 3rem;
 }

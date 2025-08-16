@@ -1,7 +1,8 @@
-<app-header />
-
+<app-header
+  [isDarkMode]="isDarkMode"
+  (toggleDarkModeOutput)="onToggleDarkMode()"
+/>
 <main class="main-content">
   <app-dashboard />
 </main>
-
 <app-footer />

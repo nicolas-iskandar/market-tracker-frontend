@@ -1,6 +1,13 @@
 <header>
   <nav>
     <a href="/">Market Tracker</a>
-    <a href="#"><i class="fa-solid fa-user"></i></a>
+    <div class="icons">
+      <i
+        (click)="toggleDarkMode()"
+        [class]="'fa-solid ' + (isDarkMode ? 'fa-sun' : 'fa-moon')"
+        style="cursor: pointer"
+      ></i
+      ><i class="fa-solid fa-user"></i>
+    </div>
   </nav>
 </header>

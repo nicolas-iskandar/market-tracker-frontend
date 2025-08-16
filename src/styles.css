@@ -1,6 +1,32 @@
 * {
+  transition: background-color 0.2s ease 0.1s;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --bg-color: #c9c9c9;
+  --li-bg-color: #6e6e6e;
+  --text-color: #fff;
+  --primary-color: #008b2a;
+  --secondary-color: #2ecc71;
   font-family: Calibri, sans-serif;
-  text-align: center;
+}
+
+.dark-mode {
+  --bg-color: #0e0e0e;
+  --li-bg-color: #202020;
+  --text-color: #f1f1f1;
+  --primary-color: #180032;
+  --secondary-color: #2ecc71;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a,
+.currency-symbol {
+  color: var(--secondary-color);
 }

@@ -15,7 +15,6 @@ app-header {
 
 app-dashboard {
   flex: 1 1 100%;
-  background-color: black;
   overflow: auto;
 }
 
