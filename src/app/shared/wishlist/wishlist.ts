@@ -1,18 +1,52 @@
 import { DecimalPipe, UpperCasePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CurrencyDto } from '../../core/dtos/currency.dtos';
+import { WishListService } from '../../core/services/wishlist.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-wishlist',
+  standalone: true,
   imports: [UpperCasePipe, DecimalPipe],
   templateUrl: './wishlist.html',
-  styleUrl: './wishlist.css',
+  styleUrls: ['./wishlist.css'],
 })
-export class WishlistComponent {
-  currencies: CurrencyDto[] = [
-    { from: 'USD', to: 'EUR', rate: 0.8543, lastUpdated: new Date() },
-    { from: 'EUR', to: 'JPY', rate: 129.1, lastUpdated: new Date() },
-    { from: 'GBP', to: 'USD', rate: 1.34, lastUpdated: new Date() },
-    { from: 'JPY', to: 'USD', rate: 0.0091, lastUpdated: new Date() },
-  ];
+export class WishlistComponent implements OnInit {
+  currencies: CurrencyDto[] = [];
+  loading = true;
+
+  constructor(
+    private wishListService: WishListService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    if (!localStorage.getItem('auth_token')) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    this.loadWatchlist();
+  }
+
+  loadWatchlist() {
+    this.wishListService.getWishlist().subscribe({
+      next: (data) => {
+        this.currencies = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Failed to load watchlist', err);
+        this.loading = false;
+      },
+    });
+  }
+
+  removeCurrency(from: string, to: string) {
+    this.wishListService.removeCurrency(from, to).subscribe(() => {
+      this.currencies = this.currencies.filter(
+        (c) => !(c.from === from && c.to === to)
+      );
+    });
+  }
 }

@@ -10,8 +10,8 @@
         (click)="toggleDarkMode()"
         [class]="'fa-solid ' + (isDarkMode ? 'fa-sun' : 'fa-moon')"
         style="cursor: pointer"
-      ></i
-      ><i class="fa-solid fa-user"></i>
+      ></i>
+      <a [routerLink]="authLink"><i class="fa-solid fa-user"></i></a>
     </div>
   </nav>
 </header>

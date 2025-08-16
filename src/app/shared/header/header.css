@@ -1,6 +1,6 @@
 header {
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: var(--li-text-color);
 }
 
 nav {
@@ -20,17 +20,13 @@ nav {
 }
 
 a {
-  color: var(--text-color);
+  color: var(--li-text-color);
   text-decoration: none;
 }
 
 .title {
   font-weight: bold;
   font-size: larger;
-}
-
-.links {
-  color: var(--text-color);
 }
 
 .icons {

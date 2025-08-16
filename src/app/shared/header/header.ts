@@ -14,4 +14,8 @@ export class Header {
   toggleDarkMode() {
     this.toggleDarkModeOutput.emit();
   }
+
+  get authLink(): string {
+    return localStorage.getItem('auth_token') ? '/logout' : '/login';
+  }
 }

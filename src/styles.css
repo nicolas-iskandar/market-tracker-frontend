@@ -6,10 +6,11 @@
 
 :root {
   --bg-color: #c9c9c9;
-  --li-bg-color: #6e6e6e;
-  --text-color: #fff;
+  --li-bg-color: #888888;
+  --li-text-color: #fff;
+  --text-color: #000000;
   --primary-color: #008b2a;
-  --secondary-color: #2ecc71;
+  --secondary-color: #0d562c;
   font-family: Calibri, sans-serif;
 }
 
