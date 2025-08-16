@@ -1,0 +1,16 @@
+header {
+  background-color: #180032;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
