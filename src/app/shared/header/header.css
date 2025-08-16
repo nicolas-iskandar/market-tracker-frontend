@@ -3,18 +3,34 @@ header {
   color: var(--text-color);
 }
 
-a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: larger;
-}
-
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1em;
+  padding-inline: 3rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+  max-width: 18rem;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.title {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.links {
+  color: var(--text-color);
 }
 
 .icons {

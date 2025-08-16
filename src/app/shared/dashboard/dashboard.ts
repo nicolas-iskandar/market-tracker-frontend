@@ -8,7 +8,7 @@ import { CurrencyDto } from '../../core/dtos/currency.dtos';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
-export class Dashboard {
+export class DashboardComponent {
   currencies: CurrencyDto[] = [
     { from: 'USD', to: 'EUR', rate: 0.8543, lastUpdated: new Date() },
     { from: 'USD', to: 'LBP', rate: 89500.0, lastUpdated: new Date() },

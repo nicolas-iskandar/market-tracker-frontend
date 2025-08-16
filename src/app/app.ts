@@ -1,11 +1,11 @@
-import { Component, Renderer2, signal } from '@angular/core';
-import { Header } from './shared/header/header';
-import { Dashboard } from './shared/dashboard/dashboard';
+import { Component, Renderer2 } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Footer } from './shared/footer/footer';
+import { Header } from './shared/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Dashboard, Footer],
+  imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

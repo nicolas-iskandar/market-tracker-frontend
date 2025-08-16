@@ -13,7 +13,7 @@ app-header {
   display: flex;
 }
 
-app-dashboard {
+.content {
   flex: 1 1 100%;
   overflow: auto;
 }
