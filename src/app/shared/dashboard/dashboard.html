@@ -5,9 +5,10 @@
       {{ 1 | number : "1.2-2" }}
       <span class="currency-symbol">{{ currency.from | uppercase }}</span>
     </div>
-    <div>
+    <div class="to-star">
       {{ currency.rate | number : "1.2-2" }}
       <span class="currency-symbol">{{ currency.to | uppercase }}</span>
+      <i class="fa-regular fa-star"></i>
     </div>
   </li>
   }
