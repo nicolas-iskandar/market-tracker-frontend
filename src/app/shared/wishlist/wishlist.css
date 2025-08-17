@@ -20,10 +20,11 @@ li {
   width: 70%;
   border-radius: 2%;
   max-width: 30rem;
+  cursor: default;
 }
 
 li:hover {
-  background-color: rgb(67, 67, 67);
+  background-color: var(--li-hover-bg-color);
 }
 
 .currency-symbol {

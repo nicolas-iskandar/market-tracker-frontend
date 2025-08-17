@@ -7,16 +7,18 @@
 :root {
   --bg-color: #c9c9c9;
   --li-bg-color: #888888;
+  --li-hover-bg-color: #747474;
   --li-text-color: #fff;
   --text-color: #000000;
   --primary-color: #008b2a;
-  --secondary-color: #0d562c;
+  --secondary-color: #106734;
   font-family: Calibri, sans-serif;
 }
 
 .dark-mode {
   --bg-color: #0e0e0e;
   --li-bg-color: #202020;
+  --li-hover-bg-color: #434343;
   --text-color: #f1f1f1;
   --primary-color: #180032;
   --secondary-color: #2ecc71;

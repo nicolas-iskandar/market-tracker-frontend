@@ -1,9 +1,18 @@
 <header>
   <nav>
     <div class="navigation">
-      <a class="title" routerLink="/">Market Tracker</a>
-      <a class="links" routerLink="/">Dashboard</a>
-      <a class="links" routerLink="/wishlist">Wishlist</a>
+      <a class="title" routerLink="/"> Market Tracker </a>
+      <a
+        class="links"
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Dashboard
+      </a>
+      <a class="links" routerLink="/wishlist" routerLinkActive="active-link">
+        Wishlist
+      </a>
     </div>
     <div class="icons">
       <i

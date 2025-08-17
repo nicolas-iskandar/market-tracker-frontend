@@ -35,3 +35,8 @@ a {
   justify-content: space-between;
   width: 3rem;
 }
+
+.active-link {
+  font-weight: bold;
+  border-bottom: 2px solid;
+}

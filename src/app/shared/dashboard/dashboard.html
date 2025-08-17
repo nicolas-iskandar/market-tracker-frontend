@@ -1,3 +1,17 @@
+<form (ngSubmit)="onSubmit()">
+  <label for="from">From</label>
+  <input
+    type="text"
+    id="from"
+    name="from"
+    required
+    [(ngModel)]="fromCurrency"
+  />
+  <label for="to">To</label>
+  <input type="text" id="to" name="to" required [(ngModel)]="toCurrency" />
+  <button>Submit</button>
+</form>
+
 <ul>
   @for (currency of currencies; track currency.from + currency.to) {
   <li>
@@ -5,10 +19,9 @@
       {{ 1 | number : "1.2-2" }}
       <span class="currency-symbol">{{ currency.from | uppercase }}</span>
     </div>
-    <div class="to-star">
+    <div>
       {{ currency.rate | number : "1.2-2" }}
       <span class="currency-symbol">{{ currency.to | uppercase }}</span>
-      <i class="fa-regular fa-star"></i>
     </div>
   </li>
   }
