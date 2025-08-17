@@ -25,7 +25,7 @@ export class LoginComponent {
     };
     this.authService.login(request).subscribe({
       next: () => {
-        this.router.navigate(['/wishlist']);
+        this.router.navigate(['/watchlist']);
       },
       error: (err) => console.error('Login failed', err),
     });

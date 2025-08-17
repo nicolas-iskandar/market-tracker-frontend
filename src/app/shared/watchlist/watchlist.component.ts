@@ -1,22 +1,22 @@
 import { DecimalPipe, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CurrencyDto } from '../../core/dtos/currency.dtos';
-import { WishListService } from '../../core/services/wishlist.service';
+import { WatchListService } from '../../core/services/watchlist.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wishlist',
   standalone: true,
   imports: [UpperCasePipe, DecimalPipe],
-  templateUrl: './wishlist.html',
-  styleUrls: ['./wishlist.css'],
+  templateUrl: 'watchlist.component.html',
+  styleUrls: ['watchlist.component.css'],
 })
-export class WishlistComponent implements OnInit {
+export class WatchlistComponent implements OnInit {
   currencies: CurrencyDto[] = [];
   loading = true;
 
   constructor(
-    private wishListService: WishListService,
+    private watchListService: WatchListService,
     private router: Router
   ) {}
 
@@ -30,7 +30,7 @@ export class WishlistComponent implements OnInit {
   }
 
   loadWatchlist() {
-    this.wishListService.getWishlist().subscribe({
+    this.watchListService.getWishlist().subscribe({
       next: (data) => {
         this.currencies = data;
         this.loading = false;
@@ -43,7 +43,7 @@ export class WishlistComponent implements OnInit {
   }
 
   removeCurrency(from: string, to: string) {
-    this.wishListService.removeCurrency(from, to).subscribe(() => {
+    this.watchListService.removeCurrency(from, to).subscribe(() => {
       this.currencies = this.currencies.filter(
         (c) => !(c.from === from && c.to === to)
       );

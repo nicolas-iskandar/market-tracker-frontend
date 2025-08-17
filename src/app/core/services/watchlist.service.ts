@@ -7,7 +7,7 @@ import { CurrencyDto } from '../dtos/currency.dtos';
 @Injectable({
   providedIn: 'root',
 })
-export class WishListService {
+export class WatchListService {
   private apiUrl = `${environment.apiUrl}/api/watchlist`;
 
   constructor(private http: HttpClient) {}
@@ -26,10 +26,14 @@ export class WishListService {
     });
   }
 
-  addCurrency(from: string, to: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${from}/${to}`, null, {
-      headers: this.getAuthHeaders(),
-    });
+  addCurrency(currency: CurrencyDto): Observable<any> {
+    return this.http.post(
+      `${this.apiUrl}/${currency.from}/${currency.to}`,
+      null,
+      {
+        headers: this.getAuthHeaders(),
+      }
+    );
   }
 
   removeCurrency(from: string, to: string): Observable<any> {

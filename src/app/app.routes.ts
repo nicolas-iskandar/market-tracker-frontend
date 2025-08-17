@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './shared/dashboard/dashboard';
-import { WishlistComponent } from './shared/wishlist/wishlist';
+import { WatchlistComponent } from './shared/watchlist/watchlist.component';
 import { LoginComponent } from './features/auth/login/login.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { LogoutComponent } from './features/auth/logout/logout.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'wishlist', component: WishlistComponent },
+  { path: 'watchlist', component: WatchlistComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'logout', component: LogoutComponent },
