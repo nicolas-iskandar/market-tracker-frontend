@@ -20,7 +20,7 @@ export class WatchListService {
     });
   }
 
-  getWishlist(): Observable<CurrencyDto[]> {
+  getWatchlist(): Observable<CurrencyDto[]> {
     return this.http.get<CurrencyDto[]>(this.apiUrl, {
       headers: this.getAuthHeaders(),
     });

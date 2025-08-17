@@ -5,7 +5,7 @@ import { WatchListService } from '../../core/services/watchlist.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-wishlist',
+  selector: 'app-watchlist',
   standalone: true,
   imports: [UpperCasePipe, DecimalPipe],
   templateUrl: 'watchlist.component.html',
@@ -30,7 +30,7 @@ export class WatchlistComponent implements OnInit {
   }
 
   loadWatchlist() {
-    this.watchListService.getWishlist().subscribe({
+    this.watchListService.getWatchlist().subscribe({
       next: (data) => {
         this.currencies = data;
         this.loading = false;
@@ -42,11 +42,13 @@ export class WatchlistComponent implements OnInit {
     });
   }
 
-  removeCurrency(from: string, to: string) {
-    this.watchListService.removeCurrency(from, to).subscribe(() => {
-      this.currencies = this.currencies.filter(
-        (c) => !(c.from === from && c.to === to)
-      );
-    });
+  removeCurrency(currency: CurrencyDto) {
+    this.watchListService
+      .removeCurrency(currency.from, currency.to)
+      .subscribe(() => {
+        this.currencies = this.currencies.filter(
+          (c) => c.from !== currency.from || c.to !== currency.to
+        );
+      });
   }
 }
