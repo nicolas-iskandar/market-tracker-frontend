@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   selector: 'app-watchlist',
   standalone: true,
   imports: [UpperCasePipe, DecimalPipe],
-  templateUrl: 'watchlist.component.html',
-  styleUrls: ['watchlist.component.css'],
+  templateUrl: 'watchlist.html',
+  styleUrl: 'watchlist.css',
 })
 export class WatchlistComponent implements OnInit {
   currencies: CurrencyDto[] = [];

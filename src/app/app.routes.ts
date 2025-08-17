@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './shared/dashboard/dashboard';
-import { WatchlistComponent } from './shared/watchlist/watchlist.component';
+import { WatchlistComponent } from './shared/watchlist/watchlist';
 import { LoginComponent } from './features/auth/login/login.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { LogoutComponent } from './features/auth/logout/logout.component';
